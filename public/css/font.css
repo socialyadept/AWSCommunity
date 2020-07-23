@@ -1,0 +1,8 @@
+@font-face {font-family: "Amazon Ember Regular";
+    src: url("../font/157c6cc36dd65b1b2adc9e7f3329c761.eot"); /* IE9*/
+    src: url("../font/157c6cc36dd65b1b2adc9e7f3329c761.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("../font/157c6cc36dd65b1b2adc9e7f3329c761.woff2") format("woff2"), /* chrome、firefox */
+    url("../font/157c6cc36dd65b1b2adc9e7f3329c761.woff") format("woff"), /* chrome、firefox */
+    url("../font/157c6cc36dd65b1b2adc9e7f3329c761.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("../font/157c6cc36dd65b1b2adc9e7f3329c761.svg#Amazon Ember Regular") format("svg"); /* iOS 4.1- */
+  }

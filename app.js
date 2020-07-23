@@ -11,6 +11,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/blog', function (req, res) {
+    res.render('blog');
+});
+
 app.listen(port, () => {
     console.log('Server started at localhost:' + port);
 });

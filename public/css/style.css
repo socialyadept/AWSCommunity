@@ -1,14 +1,22 @@
+
+
 *{
     margin: 0;
     padding: 0;
 }
 body{
-    font-family: sans-serif;
+    font-family:"Amazon Ember Regular" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
 }
 #nav-bar{
     position: sticky;
     top:0;
     z-index: 10;
+    background: #232F3E;
+    shadow
 }
 .navbar{
    /*  background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%); */
@@ -18,7 +26,7 @@ body{
 }
 .navbar-brand img{
     width: 220px;
-    height: 40px;
+    /* height: 40px; */
     padding-left: 25px;
 
 }
@@ -26,19 +34,19 @@ body{
     padding:0 10px;
 }
 .navbar-nav li a{
-    color: black !important;
+    color: white !important;
     text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 400;
+    line-height: 1.6;
     letter-spacing: 1px; 
     font-size: 13px;
-    transition: all 0.5s ease-in;
+    transition: all 0.14s ease-in;
     background: transparent !important;
 
 }
 .navbar ul li a:hover
 {
-    color: rgb(209, 230, 240) !important;
-    background: none !important;
+    color: #f8991d !important;
 }
 
 .navbar ul li a:focus
@@ -101,7 +109,6 @@ body{
     margin-right: -6px;
     
 }
-
 
 
 .btn1:hover
