@@ -2,10 +2,11 @@
 AWS Community Pakistan Web Work
 
 In order to run the code download using the command:
-git clone https://github.com/mkumail1/AWSCommunity.git
 
-open terminal with the file as the root directory
+1) git clone https://github.com/mkumail1/AWSCommunity.git
 
-run command *node app.js*
+2) open terminal with the file as the root directory
 
-The app would me up and running in the specified port.
+3) run command *node app.js*
+
+4) The app would me up and running in the specified port.
