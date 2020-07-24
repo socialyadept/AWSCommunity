@@ -1,0 +1,26 @@
+{
+  "name": "aws-pak-web",
+  "version": "1.0.0",
+  "description": "AWS Community Pakistan Web Work",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.3",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.25",
+    "node": "^14.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mkumail1/AWSCommunity.git"
+  },
+  "author": "MK",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mkumail1/AWSCommunity/issues"
+  },
+  "homepage": "https://github.com/mkumail1/AWSCommunity#readme"
+}

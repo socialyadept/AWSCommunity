@@ -6,3 +6,12 @@
     url("../font/157c6cc36dd65b1b2adc9e7f3329c761.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
     url("../font/157c6cc36dd65b1b2adc9e7f3329c761.svg#Amazon Ember Regular") format("svg"); /* iOS 4.1- */
   }
+
+  @font-face {
+    font-family: 'Amazon Ember Regular';
+    
+    src: url('../font/BookerlyLCD_It.ttf');
+    src: url('../font/AmazonEmber_Bd.ttf');
+    src: url('../font/AmazonEmber_Lt.ttf');
+    src: url('../font/AmazonEmber_Rg.ttf');
+}

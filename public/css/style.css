@@ -21,12 +21,11 @@ body{
 .navbar{
    /*  background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%); */
     background-color: #91919196;
-    padding:0 !important;
+    padding: 0 !important;
     
 }
 .navbar-brand img{
     width: 220px;
-    /* height: 40px; */
     padding-left: 25px;
 
 }
@@ -34,7 +33,7 @@ body{
     padding:0 10px;
 }
 .navbar-nav li a{
-    color: white !important;
+    color: #DDDDDD !important;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1.6;
@@ -56,11 +55,13 @@ body{
 }
 
 .fa-bars{
-    color: black;
+    color: white;
     font-size: 30px !important;
+    border: none;
 }
 .navbar-toggler{
     outline: none !important;
+    border: none!important;
 }
 /*............ Slider Starts ..........................*/
 .slider

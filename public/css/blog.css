@@ -1,0 +1,84 @@
+.slide-btn-label {
+    background: #F89649!important;
+    color: white!important;
+/* This timing applies on the way OUT */
+transition-timing-function: ease-in;
+
+/* Quick on the way out */
+transition: 0.2s;
+
+}
+
+.slide-btn-label:hover {
+    background: #f78126!important;
+    color: white!important;
+}
+
+h1 {
+    font-size: 2rem!important;
+}
+/* 
+h1 {
+    position: relative;
+    font-size: 25px!important;
+    z-index: 1;
+    overflow: hidden;
+    text-align: center;
+}
+h1:before, h1:after {
+    position: absolute;
+    top: 51%;
+    overflow: hidden;
+    width: 49%;
+    height: 2px;
+    content: '\a0';
+    background-color: #F89649;
+}
+h1:before {
+    margin-left: -50%;
+    text-align: right;
+}
+h1:after {
+    margin-left: 1%;
+    text-align: right;
+} */
+.color {
+    background-color: #ccc;
+}
+
+.tag {
+    box-sizing: border-box!important;
+    transition-timing-function: ease-in;
+    transition: 0.1s;
+}
+.tag:hover {
+    color: #FF9D00 !important;    
+}
+
+.button {
+    background: #f78126!important;
+    color: white!important;
+    border: none!important;
+}
+
+.button:hover {
+    background: #232F3E!important;
+    color: white!important;
+}
+
+#subscribe-btn {
+    /* background-color: #232F3E!important; */
+    color: white!important;
+    border: none;
+    background: linear-gradient(to right, #f78126 50%, #232F3E 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+#subscribe-btn:hover {
+    /* background-color: #f78126!important;
+    color: white!important; */
+    background-position: left bottom;
+}
+
