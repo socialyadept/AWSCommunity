@@ -15,33 +15,33 @@ transition: 0.2s;
 }
 
 h1 {
-    font-size: 2rem!important;
+    font-size: 2rem!important;    
 }
-/* 
-h1 {
+
+h1::after {
+    content: "";
+    display: block;
+    width: 225px;
+    height: 3px;
+    background: #ff9907;
     position: relative;
-    font-size: 25px!important;
-    z-index: 1;
-    overflow: hidden;
-    text-align: center;
+    bottom: 4px;
+    z-index: -1;
 }
-h1:before, h1:after {
-    position: absolute;
-    top: 51%;
-    overflow: hidden;
-    width: 49%;
+
+/* h1 span:after {
+    content: "";
+    display: block;
+    width: 44px;
+    margin-left: 256px;
     height: 2px;
-    content: '\a0';
-    background-color: #F89649;
-}
-h1:before {
-    margin-left: -50%;
-    text-align: right;
-}
-h1:after {
-    margin-left: 1%;
-    text-align: right;
+    background: #ff9907;
+    position: relative;
+    bottom: 4px;
+    z-index: -1;
 } */
+
+
 .color {
     background-color: #ccc;
 }
@@ -81,4 +81,10 @@ h1:after {
     color: white!important; */
     background-position: left bottom;
 }
+
+.tag-list:hover {
+    background: #232F3E!important;
+    color: white!important;
+}
+
 

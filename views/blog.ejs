@@ -24,34 +24,44 @@
 
     <!--================ Blog slider start =================-->  
     <section>
-      <div class="container mt-5">
+        
+      <div class="container mt-3">
           <h1 class="my-5">AWS Community <span class="font-weight-light">Blog</span> </h1>
-        <div class="owl-carousel owl-theme blog-slider">
-            <% for(i=1;i<=6;i++){ %>
-                <div class="card blog__slide text-center">
-                    <div class="blog__slide__img">
-                      <img class="card-img rounded-0" src="img/blog/blog-slider/blog-slide<%= i > 3 ? 6-i : i%>.png" alt="">
-                    </div>
-                    <div class="blog__slide__content">
-                      <a class="blog__slide__label slide-btn-label rounded" href="#">Fashion</a>
-                      <h3><a href="#">New york fashion week's continued the evolution <%= i %></a></h3>
-                      <p>2 days ago</p>
-                    </div>
-                  </div>
-            <% } %>
-
-          </div>
         </div>
-      </div>
-    </section>
+        
     <!--================ Blog slider end =================-->  
 
     <!--================ Start Blog Post Area =================-->
     <section class="blog-post-area section-margin mt-4">
+        
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
-             <% for(i=1;i<6;i++){ %>
+            <div class="row">
+            <% for(i=1;i<5;i++){ %>
+                <div class="col-md-6">
+                  <div class="single-recent-blog-post card-view">
+                    <div class="thumb">
+                      <img class="card-img rounded-0" src="img/blog/thumb/thumb-card<%= i > 4 ? 5-i : i %>.png" alt="">
+                      <ul class="thumb-info">
+                        <li><a href="#"><i class="ti-user"></i>Admin</a></li>
+                        <li><a href="#"><i class="ti-themify-favicon"></i>2 Comments</a></li>
+                      </ul>
+                    </div>
+                    <div class="details mt-20">
+                      <a href="blog-single.html">
+                        <h3>Fast cars and rickety bridges as 
+                            he grand tour returns</h3>
+                      </a>
+                      <p>Vel aliquam quis, nulla pede mi commodo no tristique nam hac luctus torquent velit felis lone commodo pellentesque</p>
+                      <a class="button rounded" href="/">Read More <i class="ti-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </div>
+            <% } %>
+            </div>
+             
+        <% for(i=1;i<4;i++){ %>
             <div class="single-recent-blog-post">
               <div class="thumb">
                 <img class="img-fluid" src="img/blog/blog<%= i > 4 ? 6-i : i %>.png" alt="">
@@ -72,6 +82,8 @@
               </div>
             </div>
        <% } %>
+
+       
           
 
             <div class="row">
@@ -120,31 +132,31 @@
                   <ul class="cat-list mt-20">
                     <li>
                       <a href="#" class="d-flex justify-content-between">
-                        <p>Technology</p>
+                        <p>Cloud</p>
                         <p>(03)</p>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="d-flex justify-content-between">
-                        <p>Software</p>
+                        <p>Technology</p>
                         <p>(09)</p>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="d-flex justify-content-between">
-                        <p>Lifestyle</p>
+                        <p>AWS Pakistan</p>
                         <p>(12)</p>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="d-flex justify-content-between">
-                        <p>Shopping</p>
+                        <p>Open Source</p>
                         <p>(02)</p>
                       </a>
                     </li>
                     <li>
                       <a href="#" class="d-flex justify-content-between">
-                        <p>Food</p>
+                        <p>Pages</p>
                         <p>(10)</p>
                       </a>
                     </li>
@@ -202,31 +214,25 @@
                 </div>
 
                   <div class="single-sidebar-widget tag_cloud_widget">
-                    <h4 class="single-sidebar-widget__title">Popular Post</h4>
+                    <h4 class="single-sidebar-widget__title">Popular Tags</h4>
                     <ul class="list">
                       <li>
-                          <a href="#">project</a>
+                          <a href="#" class="tag-list rounded">AWS</a>
                       </li>
                       <li>
-                          <a href="#">love</a>
+                          <a href="#" class="tag-list rounded">Cloud</a>
                       </li>
                       <li>
-                          <a href="#">technology</a>
+                          <a href="#" class="tag-list rounded">Technology</a>
                       </li>
                       <li>
-                          <a href="#">travel</a>
+                          <a href="#" class="tag-list rounded">Communication</a>
                       </li>
                       <li>
-                          <a href="#">software</a>
+                          <a href="#" class="tag-list rounded">Resourceful</a>
                       </li>
                       <li>
-                          <a href="#">life style</a>
-                      </li>
-                      <li>
-                          <a href="#">design</a>
-                      </li>
-                      <li>
-                          <a href="#">illustration</a>
+                          <a href="#" class="tag-list rounded"></a>
                       </li>
                     </ul>
                   </div>
