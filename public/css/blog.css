@@ -82,6 +82,10 @@ h1::after {
     background-position: left bottom;
 }
 
+a h6 {
+    letter-spacing: 0.6px;
+}
+
 .tag-list:hover {
     background: #232F3E!important;
     color: white!important;
