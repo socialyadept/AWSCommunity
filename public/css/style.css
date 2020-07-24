@@ -33,7 +33,7 @@ body{
     padding:0 10px;
 }
 .navbar-nav li a{
-    color: #DDDDDD !important;
+    color: white !important;
     text-transform: uppercase;
     font-weight: 400;
     line-height: 1.6;
