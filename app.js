@@ -68,7 +68,19 @@ app.get('/blog/:id/edit', (req, res) => {
         if (err)
             console.log(err);
         else {
-            res.render('edit', { blog: blog })
+            res.render('blog/edit', { blog: blog })
+        }
+    });
+});
+
+app.post('/blog/:id/edit', (req, res) => {
+    var updatedBlog = req.body;
+
+    Blogs.findByIdAndUpdate(req.params.id, updatedBlog, function (err, blog) {
+        if (err)
+            console.log(err);
+        else {
+            res.render('blog/' + blog._id)
         }
     });
 });

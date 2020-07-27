@@ -1,0 +1,61 @@
+<%- include('../partials/header') -%>
+<link rel="stylesheet" href="/css/new-blog.css">
+<div class="container">
+    <div class="row my-5">
+        <div class="col-md-8 mx-auto font-weight-light">
+            <form action="/blog/new" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Title <span class="aesteric">*</span></label>
+                  <input type="text" class="form-control" name='title' value="<%=blog.title%>" id="exampleFormControlInput1" placeholder="Welcome to Cloud" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Welcome to Cloud'" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Image <span class="aesteric">*</span></label>
+                  <input type="text" class="form-control" name="image" value="<%=blog.image%>" id="exampleFormControlInput1" placeholder="Image URL" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Image URL'" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Author <span class="aesteric">*</span></label>
+                  <input type="text" class="form-control" name="author" value="<%=blog.author%>" id="exampleFormControlInput1" placeholder="Roger Federer" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Jeff Bezos'" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Description <span class="aesteric">*</span></label>
+                  <input type="text" class="form-control" name="description" value="<%=blog.description%>" id="exampleFormControlInput1" placeholder="Introducing new blog" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Introducing new Blog'" required>
+                </div>
+                <!-- <div class="form-group">
+                  <label for="exampleFormControlSelect1">Example select</label>
+                  <select class="form-control" id="exampleFormControlSelect1">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                  </select>
+                </div> -->
+                <div class="form-group">
+                  <label for="exampleFormControlSelect2">Tags <span class="aesteric">*</span></label>
+                  <select multiple class="form-control" name="tags" id="exampleFormControlSelect2" required>
+                    <option>Cloud</option>
+                    <option>Technology</option>
+                    <option>AWS Pakistan</option>
+                    <option>Open Source</option>
+                    <option>Resourceful</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Quotation</label>
+                  <textarea class="form-control form-control-sm" name="quote" rows="5" ><%=blog.quote%></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1">Blog <span class="aesteric">*</span></label>
+                  <textarea class="form-control form-control-lg" name="text" id="blogtext" rows="10" required><%=blog.text%></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary w-25 post-btn">Post</button>
+                </div>
+              </form>
+        </div>
+            
+    </div>
+</div>
+
+
+<%- include('../partials/footer') -%>
