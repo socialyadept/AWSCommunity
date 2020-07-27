@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row my-5">
         <div class="col-md-8 mx-auto font-weight-light">
-            <form action="/blog/new" method="POST">
+            <form action="/blog/<%=blog._id%>/edit" method="POST">
                 <div class="form-group">
                   <label for="exampleFormControlInput1">Title <span class="aesteric">*</span></label>
                   <input type="text" class="form-control" name='title' value="<%=blog.title%>" id="exampleFormControlInput1" placeholder="Welcome to Cloud" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Welcome to Cloud'" required>

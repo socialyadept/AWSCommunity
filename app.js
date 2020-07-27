@@ -32,6 +32,7 @@ app.get('/blog', function (req, res) {
                 else {
                     //count = Math.floor((Math.random() * count) + 1)
                     //console.log("total number of models: " + count);
+
                     res.render('blog/index', { blogs: allblogs, count: count });
 
                 }
@@ -80,7 +81,7 @@ app.post('/blog/:id/edit', (req, res) => {
         if (err)
             console.log(err);
         else {
-            res.render('blog/' + blog._id)
+            res.redirect('/blog/' + blog._id)
         }
     });
 });
@@ -104,10 +105,8 @@ app.get('/blog/:id', (req, res) => {
     });
 });
 
-app.post('/newsletter', function (req, res) {
-    var email = req.body;
-    var email_g = req.params;
-    console.log(email);
+app.get('/*', (req, res) => {
+    res.render('error');
 });
 
 app.listen(port, () => {
