@@ -1,0 +1,20 @@
+
+label {
+    color: #535459;
+}
+
+#blogtext {
+    font-size: .9rem;
+    height: 400px;
+}
+
+
+.post-btn {
+    background: #F27F27; 
+    border:none;
+}
+
+.post-btn:hover {
+    background: #f59851; 
+    border:none;
+}
