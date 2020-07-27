@@ -54,7 +54,7 @@
                         <h3><%= blog.title%></h3>
                       </a>
 
-                      <p class="tag-list-inline">Tag: 
+                      <p class="tag-list-inline">Tags: 
                         <% blog.tags.forEach((tag)=>{ %>
                         <a href="#" class="tag"><%=tag%></a>
                         <%})%>
@@ -83,7 +83,7 @@
                 <a href="/blog/<%=blog._id%>">
                   <h3><%= blog.title%></h3>
                 </a>
-                <p class="tag-list-inline">Tag: 
+                <p class="tag-list-inline">Tags: 
                   <% blog.tags.forEach((tag)=>{ %>
                     <a href="#" class="tag"><%=tag%></a>
                   <%})%>
@@ -205,7 +205,7 @@
                           <img class="card-img rounded-0" src="<%= blog.image %>" alt="">
                           <ul class="thumb-info">
                             <li><a href="blog/<%= blog._id%>"><%=blog.author%></a></li>
-                            <li><a href="blog/<%= blog._id%>">Dec 15</a></li>
+                            <li><a href="blog/<%= blog._id%>"><%=blog.date%></a></li>
                           </ul>
                         </div>
                         <div class="details mt-20">

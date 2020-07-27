@@ -46,11 +46,11 @@ app.get('/blog/new', (req, res) => {
 });
 
 app.post('/blog/new', (req, res) => {
-    var today = new Date();
-    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
-    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    var dateTime = date + ' ' + time;
-    var newBlog = req.body;
+    var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
+        time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+        dateTime = date + ' ' + time,
+        newBlog = req.body;
 
     newBlog.date = dateTime;
 
@@ -83,7 +83,14 @@ app.get('/blog/:id/edit', (req, res) => {
 });
 
 app.post('/blog/:id/edit', (req, res) => {
-    var updatedBlog = req.body;
+    var today = new Date(),
+        date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
+        time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+        dateTime = date + ' ' + time,
+        updatedBlog = req.body;
+
+    updatedBlog.date = dateTime;
+    console.log(updatedBlog);
 
     Blogs.findByIdAndUpdate(req.params.id, updatedBlog, function (err, blog) {
         if (err)
