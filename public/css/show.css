@@ -1,3 +1,33 @@
 p.text-muted {
     margin-top: -2%;
 }
+
+.tag-list:hover {
+    background: #232F3E!important;
+    color: white!important;
+}
+
+.user_details .float-left {
+    max-width: 80%;
+}
+
+#subscribe-btn-show {
+    /* background-color: #232F3E!important; */
+    color: white!important;
+    border: none;
+    background: linear-gradient(to right, #f78126 50%, #232F3E 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: all .5s ease-out;
+}
+
+#subscribe-btn-show:hover {
+   
+    background-position: left bottom;
+}
+
+@media only screen and (max-width: 1200px) {
+    .user_details .float-left {
+        max-width: 70%;
+    }
+}

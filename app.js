@@ -40,27 +40,6 @@ app.get('/blog', function (req, res) {
     });
 });
 
-app.get('/blog/:id', (req, res) => {
-    var id = req.params.id;
-
-    Blogs.findById(id, function (err, blog) {
-        if (err)
-            console.log(err);
-        else {
-            console.log(blog);
-            Blogs.find({}, (err, allblogs) => {
-                if (err) {
-                    console.log(err);
-                }
-                else {
-                    res.render('blog/show', { blog: blog, allblogs: allblogs })
-                }
-            })
-
-        }
-    });
-});
-
 app.get('/blog/new', (req, res) => {
     res.render('blog/new');
 });
@@ -74,6 +53,25 @@ app.post('/blog/new', (req, res) => {
         else {
             console.log(newBlog);
             res.redirect('/blog/new');
+        }
+    });
+});
+
+app.get('/blog/:id', (req, res) => {
+
+    Blogs.findById(req.params.id, function (err, blog) {
+        if (err)
+            console.log(err);
+        else {
+            Blogs.find({}, (err, allblogs) => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    res.render('blog/show', { blog: blog, allblogs: allblogs })
+                }
+            })
+
         }
     });
 });

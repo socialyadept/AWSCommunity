@@ -1,6 +1,6 @@
 <%- include('../partials/header') -%>
 <link rel="stylesheet" href="/css/show.css">
-<section class="blog-post-area section-margin">
+<section class="blog-post-area mt-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-8">
@@ -9,9 +9,11 @@
                 <a href="#"><h4><%=blog.title%></h4></a>
                 <p class="text-muted"><%=blog.description%></p>
                 <div class="user_details">
+                    
                   <div class="float-left">
+                      Tags: &nbsp;
                       <% blog.tags.forEach((tag)=>{ %>
-                        <a href="#"><%= tag %></a>
+                        <a href="#" class="rounded"><%= tag %></a>
                     <% }) %>
                   </div>
                   <div class="float-right mt-sm-0 mt-3">
@@ -25,26 +27,30 @@
                       </div> -->
                     </div>
                   </div>
+                  
                 </div>
                 <p><%=blog.text%></p>
-           <blockquote class="blockquote">
-             <p class="mb-0">MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower to actually sit through a self-imposed MCSE training.</p>
-           </blockquote>
-           <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower</p>
-           <p>MCSE boot camps have its supporters and its detractors. Some people do not understand why you should have to spend money on boot camp when you can get the MCSE study materials yourself at a fraction of the camp price. However, who has the willpower</p>
+                <% if (blog.quote) { %>
+                    <blockquote class="blockquote">
+                        <p class="mb-0">"<%=blog.quote%>"</p>
+                    </blockquote>
+                <% } %>
+           
                <div class="news_d_footer flex-column flex-sm-row">
-                 <a href="#"><span class="align-middle mr-2"><i class="ti-heart"></i></span>Lily and 4 people like this</a>
-                 <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>06 Comments</a>
+                 
+                <a href="https://aws.amazon.com/education/awseducate/" target="_blank"><span class="align-middle mr-2"><i class="ti-heart"></i></span>Powered by AWS Educate</a>
+                <!-- <a class="justify-content-sm-center ml-sm-auto mt-sm-0 mt-2" href="#"><span class="align-middle mr-2"><i class="ti-themify-favicon"></i></span>06 Comments</a> -->
+                 
                  <div class="news_socail ml-sm-auto mt-sm-0 mt-2">
                <a href="https://www.facebook.com/AWScommunityPakistan" target="_blank"><i class="fab fa-facebook-f"></i></a>
                <a href="https://www.linkedin.com/company/aws-community-pakistan" target="_blank"><i class="fab fa-linkedin"></i></a>
                
-             </div>
+                </div>
                </div>
-              </div>
+            </div>
 
 
-          <div class="navigation-area">
+          <!-- <div class="navigation-area">
                   <div class="row">
                       <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                           <div class="thumb">
@@ -189,7 +195,7 @@
                         </div>
                         <a href="#" class="button submit_btn">Post Comment</a>
                     </form>
-                </div>
+                </div> -->
         </div>
 
         <!-- Start Blog Post Siddebar -->
@@ -203,129 +209,95 @@
                       onblur="this.placeholder = 'Enter email'">
                   </div>
                 </div>
-                <button class="bbtns d-block mt-20 w-100">Subcribe</button>
+                <button id="subscribe-btn-show" class="bbtns d-block mt-20 rounded w-100">Subcribe</button>
               </div>
 
 
               <div class="single-sidebar-widget post-category-widget">
-                <h4 class="single-sidebar-widget__title">Catgory</h4>
+                <h4 class="single-sidebar-widget__title">Category</h4>
                 <ul class="cat-list mt-20">
-                  <li>
-                    <a href="#" class="d-flex justify-content-between">
-                      <p>Technology</p>
-                      <p>(03)</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex justify-content-between">
-                      <p>Software</p>
-                      <p>(09)</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex justify-content-between">
-                      <p>Lifestyle</p>
-                      <p>(12)</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex justify-content-between">
-                      <p>Shopping</p>
-                      <p>(02)</p>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="d-flex justify-content-between">
-                      <p>Food</p>
-                      <p>(10)</p>
-                    </a>
-                  </li>
-                </ul>
+                    <li>
+                      <a href="#" class="d-flex justify-content-between">
+                        <p>Cloud</p>
+                        <p>(03)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="d-flex justify-content-between">
+                        <p>Technology</p>
+                        <p>(09)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="d-flex justify-content-between">
+                        <p>AWS Pakistan</p>
+                        <p>(12)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="d-flex justify-content-between">
+                        <p>Open Source</p>
+                        <p>(02)</p>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="d-flex justify-content-between">
+                        <p>Pages</p>
+                        <p>(10)</p>
+                      </a>
+                    </li>
+                  </ul>
               </div>
 
               <div class="single-sidebar-widget popular-post-widget">
                 <h4 class="single-sidebar-widget__title">Popular Post</h4>
                 <div class="popular-post-list">
-                  <div class="single-post-list">
-                    <div class="thumb">
-                      <img class="card-img rounded-0" src="/img/blog/thumb/thumb1.png" alt="">
-                      <ul class="thumb-info">
-                        <li><a href="#">Adam Colinge</a></li>
-                        <li><a href="#">Dec 15</a></li>
-                      </ul>
-                    </div>
-                    <div class="details mt-20">
-                      <a href="blog-single.html">
-                        <h6>Accused of assaulting flight attendant miktake alaways</h6>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="single-post-list">
-                    <div class="thumb">
-                      <img class="card-img rounded-0" src="/img/blog/thumb/thumb2.png" alt="">
-                      <ul class="thumb-info">
-                        <li><a href="#">Adam Colinge</a></li>
-                        <li><a href="#">Dec 15</a></li>
-                      </ul>
-                    </div>
-                    <div class="details mt-20">
-                      <a href="blog-single.html">
-                        <h6>Tennessee outback steakhouse the
-                          worker diagnosed</h6>
-                      </a>
-                    </div>
-                  </div>
-                  <div class="single-post-list">
-                    <div class="thumb">
-                      <img class="card-img rounded-0" src="/img/blog/thumb/thumb3.png" alt="">
-                      <ul class="thumb-info">
-                        <li><a href="#">Adam Colinge</a></li>
-                        <li><a href="#">Dec 15</a></li>
-                      </ul>
-                    </div>
-                    <div class="details mt-20">
-                      <a href="blog-single.html">
-                        <h6>Tennessee outback steakhouse the
-                          worker diagnosed</h6>
-                      </a>
-                    </div>
-                  </div>
+                    <% for(var blog of allblogs){ %>
+                        <% if (allblogs.indexOf(blog) > 2){ %>
+                          <% break;} %>  
+                        <div class="single-post-list">
+                          <div class="thumb">
+                            <img class="card-img rounded-0" src="<%= blog.image %>" alt="">
+                            <ul class="thumb-info">
+                              <li><a href="blog/<%= blog._id%>"><%=blog.author%></a></li>
+                              <li><a href="blog/<%= blog._id%>">Dec 15</a></li>
+                            </ul>
+                          </div>
+                          <div class="details mt-20">
+                            <a href="blog/<%= blog._id%>">
+                              <h6><%=blog.title%></h6>
+                            </a>
+                          </div>
+                        </div>
+                      <% } %>
                 </div>
               </div>
 
-                <div class="single-sidebar-widget tag_cloud_widget">
-                  <h4 class="single-sidebar-widget__title">Popular Post</h4>
-                  <ul class="list">
-                    <li>
-                        <a href="#">project</a>
-                    </li>
-                    <li>
-                        <a href="#">love</a>
-                    </li>
-                    <li>
-                        <a href="#">technology</a>
-                    </li>
-                    <li>
-                        <a href="#">travel</a>
-                    </li>
-                    <li>
-                        <a href="#">software</a>
-                    </li>
-                    <li>
-                        <a href="#">life style</a>
-                    </li>
-                    <li>
-                        <a href="#">design</a>
-                    </li>
-                    <li>
-                        <a href="#">illustration</a>
-                    </li>
-                  </ul>
-                </div>
+              <div class="single-sidebar-widget tag_cloud_widget mb-4">
+                <h4 class="single-sidebar-widget__title">Popular Tags</h4>
+                <ul class="list">
+                  <li>
+                      <a href="#" class="tag-list rounded">AWS</a>
+                  </li>
+                  <li>
+                      <a href="#" class="tag-list rounded">Cloud</a>
+                  </li>
+                  <li>
+                      <a href="#" class="tag-list rounded">Technology</a>
+                  </li>
+                  <li>
+                      <a href="#" class="tag-list rounded">Communication</a>
+                  </li>
+                  <li>
+                      <a href="#" class="tag-list rounded">Resourceful</a>
+                  </li>
+                  
+                </ul>
               </div>
             </div>
-          </div>
+        </div>
         <!-- End Blog Post Siddebar -->
-      </div>
+        </div>
+    </div>
   </section>
 <%- include('../partials/footer') -%>
