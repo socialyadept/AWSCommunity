@@ -65,13 +65,21 @@ app.post('/blog/new', (req, res) => {
 
 app.get('/blog/:id/edit', (req, res) => {
 
-    Blogs.findById(req.params.id, function (err, blog) {
-        if (err)
-            console.log(err);
-        else {
-            res.render('blog/edit', { blog: blog })
-        }
-    });
+    try {
+        Blogs.findById(req.params.id, function (err, blog) {
+            if (err) {
+                console.log(err);
+                res.redirect('/*');
+            }
+            else {
+                res.render('blog/edit', { blog: blog })
+            }
+        });
+    }
+    catch {
+        res.redirect('/*');
+    }
+
 });
 
 app.post('/blog/:id/edit', (req, res) => {
@@ -88,10 +96,8 @@ app.post('/blog/:id/edit', (req, res) => {
 
 app.get('/blog/:id', (req, res) => {
 
-    Blogs.findById(req.params.id, function (err, blog) {
-        if (err)
-            console.log(err);
-        else {
+    Blogs.findById(req.params.id)
+        .then(blog => {
             Blogs.find({}, (err, allblogs) => {
                 if (err) {
                     console.log(err);
@@ -99,13 +105,15 @@ app.get('/blog/:id', (req, res) => {
                 else {
                     res.render('blog/show', { blog: blog, allblogs: allblogs })
                 }
-            })
+            });
+        })
+        .catch(err => {
+            res.redirect('/error');
+        });
 
-        }
-    });
 });
 
-app.get('/*', (req, res) => {
+app.get('*', (req, res) => {
     res.render('error');
 });
 
