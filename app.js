@@ -45,14 +45,30 @@ app.get('/blog/new', (req, res) => {
 });
 
 app.post('/blog/new', (req, res) => {
+    var today = new Date();
+    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date + ' ' + time;
     var newBlog = req.body;
+
+    newBlog.date = dateTime;
 
     Blogs.create(newBlog, function (err, blog) {
         if (err)
             console.log(err);
         else {
-            console.log(newBlog);
-            res.redirect('/blog/new');
+            res.redirect("/blog/" + blog._id);
+        }
+    });
+});
+
+app.get('/blog/:id/edit', (req, res) => {
+
+    Blogs.findById(req.params.id, function (err, blog) {
+        if (err)
+            console.log(err);
+        else {
+            res.render('edit', { blog: blog })
         }
     });
 });

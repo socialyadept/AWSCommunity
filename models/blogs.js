@@ -8,6 +8,7 @@ var blogSchema = new mongoose.Schema({
     description: String,
     quote: String,
     text: String,
+    date: String
 
 });
 
