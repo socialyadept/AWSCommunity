@@ -1,0 +1,103 @@
+/* *********************************
+            FAQs Style
+********************************* */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+
+
+#accordian .panel{
+    box-shadow: none;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+#accordian .panel-heading{
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+}
+
+
+#accordian .panel-title a{
+    display: block;
+    padding: 25px 35px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    background-color: #34495e;
+    border: none;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+
+
+#accordian .panel-title a:after,
+#accordian .panel-title a.collapsed:after{
+    content: "\f068";
+    font-family: fontawesome;
+    width: 40px;
+    height: 40px;
+    line-height: 32px;
+    border-radius: 50%;
+    background: #34495e;
+    text-align: center;
+    font-size: px;
+    color: white;
+    border: 5px solid white;
+    position: absolute;
+    top: 10px;
+    left: -20px;
+    transition: all 0.3s ease 0s;
+}
+
+
+#accordian .panel-title a.collapsed:after{
+    content: "\f067";
+    
+}
+
+
+
+#accordian .panel-title a:hover:after,
+#accordian .panel-title a.collapsed:hover:after{
+    transform: rotate(360deg);
+}
+
+
+#accordian .panel-body{
+    padding: 15px 25px;
+    background-color: #ebebeb;
+    font-size: 14px;
+    color: #8c8c8c;
+    line-height: 25px;
+    border-top: none;
+    position: relative;
+    
+}
+
+.panel-heading a{
+    text-decoration: none !important;
+    font-size: 15px !important;
+    font-weight: normal !important;
+}
+
+
+.freeimage img{
+    margin-top: -45px;
+    
+}
+/************FAQs Style Ends*************/
+
+/* *******************************Team Section Css******************************/
+.team{
+ text-align: center;
+ font-size: bold;
+ letter-spacing: 2px;
+ color: #000;
+}
