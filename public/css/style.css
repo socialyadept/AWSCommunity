@@ -143,7 +143,7 @@ body{
     border-color: orangered;
     
 }
-.social-networks a.fa
+ /* .social-networks a
 {
     border: 1px solid white;
     padding: 10px;
@@ -154,7 +154,7 @@ body{
     margin-right: 2px;
     transition: all 0.5s ease-in;
     
-}
+}  */
 
 
 .social-networks a.fa:hover
