@@ -120,6 +120,12 @@ app.get('/blog/:id', (req, res) => {
 
 });
 
+app.get('/faqs', (req, res) => {
+
+    res.render('faqs');
+
+});
+
 app.get('*', (req, res) => {
     res.render('error');
 });
