@@ -7,6 +7,9 @@ var express = require('express'),
     mongoose = require('mongoose'),
     bodyParser = require('body-parser'),
     Blogs = require('./models/blogs'),
+    passport = require('passport'),
+    LocalStrategy = require('passport-local'),
+    User = require('./models/user'),
     port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
@@ -15,6 +18,23 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 mongoose.connect('mongodb://localhost/aws_blogs', { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.use(require('express-session')({
+    secret: "Once again We won",
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate())); //for local check of authentication
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+//for rendering some current data to all local res requests
+app.use(function (req, res, next) {
+    res.locals.currentUser = req.user;
+    next();
+});
 
 app.get('/', (req, res) => {
     res.render('landing');
