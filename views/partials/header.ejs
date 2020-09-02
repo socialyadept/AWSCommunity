@@ -35,7 +35,7 @@
         <i class="fa fa-bars"></i>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="collapse navbar-collapse mr-3" id="navbarNav">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
             <a class="nav-link" href="/">Home</a>
@@ -59,10 +59,11 @@
           </li>
           <% if(!currentUser) { %>
             <li class="nav-item">
-              <a href="/login" class="nav-link">Login</a>            </li>           
+              <a href="/login" class="nav-link">Login</a>            
+            </li>           
                         
             <% } else { %>
-            <li class="nav-item"><a class="nav-link" href="#">Logged in as <%= currentUser.username %></a></li>
+            <li class="nav-item"><a class="nav-link" href="#"><%= currentUser.username %></a></li>
             <li class="nav-item"><a class="nav-link" href="/logout" class="">Logout</a></li>
             <% if(currentUser.admin){ %>
             <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>

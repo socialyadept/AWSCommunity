@@ -170,11 +170,13 @@ app.get('/login', function (req, res) {
 app.post('/login', passport.authenticate('local', {
     successRedirect: '/',
     failureRedirect: '/login'
-}));
+}), (req, res) => {
+
+});
 
 app.get('/logout', function (req, res) {
     req.logout();
-    res.redirect('/blogs');
+    res.redirect('/');
 }, function (req, res) {
 
 });
