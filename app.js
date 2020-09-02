@@ -10,6 +10,7 @@ var express = require('express'),
     passport = require('passport'),
     LocalStrategy = require('passport-local'),
     User = require('./models/user'),
+    TempBlog = require('./models/tempBlog'),
     port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
