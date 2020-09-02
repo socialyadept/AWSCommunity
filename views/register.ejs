@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+<link rel="stylesheet" href="/css/new-blog.css">
+<div class="container w-50 new">
+    <div class="row my-5">
+        <div class="col-md-8 mx-auto">
+            <form action="/register" method="POST">
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Username <span class="aesteric">*</span></label>
+                  <input type="text" class="form-control" name='username' id="exampleFormControlInput1" placeholder="Enter a username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Welcome to Cloud'" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Email <span class="aesteric">*</span></label>
+                  <input type="email" class="form-control" name='email' id="exampleFormControlInput1" placeholder="Enter your email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your email'" required>
+                </div>
+                <div class="form-group">
+                  <label for="exampleFormControlInput1">Password <span class="aesteric">*</span></label>
+                  <input type="password" class="form-control" name="password" id="exampleFormControlInput1" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'password'" required>
+                </div>
+                
+                <div class="form-group">
+                    <button class="btn btn-primary w-25 post-btn">Register</button>
+                </div>
+              </form>
+        </div>
+            
+    </div>
+</div>
+
+
+<%- include('partials/footer') -%>

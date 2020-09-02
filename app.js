@@ -146,6 +146,67 @@ app.get('/faqs', (req, res) => {
 
 });
 
+app.get('/register', function (req, res) {
+    res.render('register');
+});
+
+app.post('/register', function (req, res) {
+    var newUser = new User({ username: req.body.username, email: req.body.email });
+    User.register(newUser, req.body.password, function (err, user) {
+        if (err) {
+            console.log(err);
+            return res.render('register');
+        }
+        passport.authenticate('local')(req, res, function () { //for loggin in user
+            res.redirect('/');
+        });
+    });
+});
+
+app.get('/login', function (req, res) {
+    res.render('login');
+});
+
+app.post('/login', passport.authenticate('local', {
+    successRedirect: '/',
+    failureRedirect: '/login'
+}));
+
+app.get('/logout', function (req, res) {
+    req.logout();
+    res.redirect('/blogs');
+}, function (req, res) {
+
+});
+
+app.get('/dashboard', isLoggedIn, (req, res) => {
+    TempBlog.find({}, (err, allblogs) => {
+        if (err)
+            console.log(err);
+
+        else {
+            TempBlog.countDocuments({}, function (err, count) {
+                if (err)
+                    console.log(err);
+                else {
+                    //count = Math.floor((Math.random() * count) + 1)
+                    //console.log("total number of models: " + count);
+                    res.render('dashboard', { blogs: allblogs, count: count });
+
+                }
+            });
+        }
+    });
+});
+
+function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated()) {
+        // currentUser = true;
+        return next();
+    }
+    res.redirect('/login');
+}
+
 app.get('*', (req, res) => {
     res.render('error');
 });
