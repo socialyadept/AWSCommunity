@@ -72,6 +72,7 @@ app.post('/blog/new', (req, res) => {
         time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
         dateTime = date + ' ' + time,
         newBlog = req.body;
+    console.log(newBlog);
 
     newBlog.date = dateTime;
 
@@ -83,6 +84,76 @@ app.post('/blog/new', (req, res) => {
             res.render("approval");
         }
     });
+});
+
+app.post('/blog/confirmnew', isLoggedIn, (req, res) => {
+    // var today = new Date(),
+    //     date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
+    //     time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
+    //     dateTime = date + ' ' + time,
+    //     newBlog = req.body;
+
+    // newBlog.date = dateTime;
+
+
+    TempBlog.findById(req.body.id, function (err, temp) {
+        if (err) {
+            console.log('error');
+
+
+        } else {
+
+            var title = temp.title,
+                author = temp.author,
+                tags = temp.tags,
+                image = temp.image,
+                description = temp.description,
+                quote = temp.quote,
+                text = temp.text,
+                date = temp.date;
+            Blogs.create({ title, author, tags, image, description, quote, text, date }, function (err, blog) {
+                if (err)
+                    console.log(err);
+                else {
+                    console.log(blog);
+                    Blogs.find(function (err, allblogs) {
+                        if (err) {
+                            console.log(err);
+                        }
+                        else {
+                            TempBlog.findByIdAndDelete(req.body.id, function (err, deletedItem) {
+                                if (err) {
+                                    console.log('deleted error\n' + err);
+                                }
+                                else {
+                                    console.log('successfully deleted \n' + deletedItem);
+                                    res.render("blog/show", { blog: blog, allblogs: allblogs });
+
+                                }
+                            });
+                        }
+
+                    });
+                }
+            });
+        }
+
+    });
+
+});
+
+app.post('/blog/rejectnew', isLoggedIn, (req, res) => {
+
+    TempBlog.findByIdAndDelete(req.body.id, function (err, deletedItem) {
+        if (err) {
+            console.log('deleted error\n' + err);
+        }
+        else {
+            console.log('successfully deleted \n' + deletedItem);
+            res.redirect("/dashboard");
+        }
+    });
+
 });
 
 app.get('/blog/:id/edit', (req, res) => {
@@ -126,6 +197,25 @@ app.post('/blog/:id/edit', (req, res) => {
 app.get('/blog/:id', (req, res) => {
 
     Blogs.findById(req.params.id)
+        .then(blog => {
+            Blogs.find({}, (err, allblogs) => {
+                if (err) {
+                    console.log(err);
+                }
+                else {
+                    res.render('blog/show', { blog: blog, allblogs: allblogs })
+                }
+            });
+        })
+        .catch(err => {
+            res.redirect('/error');
+        });
+
+});
+
+app.get('/tempBlog/:id', (req, res) => {
+
+    TempBlog.findById(req.params.id)
         .then(blog => {
             Blogs.find({}, (err, allblogs) => {
                 if (err) {

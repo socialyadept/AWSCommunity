@@ -15,7 +15,7 @@
         <% blogs.forEach((blog)=>{ %>
             <tr >
                 <td><%= blogs.indexOf(blog) + 1 %></td>
-                <td><a href="/blog/<%=blog._id%>"><%= blog.title %></a></td>
+                <td><a href="/tempBlog/<%=blog._id%>"><%= blog.title %></a></td>
                 <td><%= blog.date %></td>
                 <td> <form action="/blog/confirmnew" method="post">
                     <input type="hidden" name="id" value="<%=blog._id%>">
