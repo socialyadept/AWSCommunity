@@ -2,17 +2,20 @@
 
 <div style="margin:150px auto;" class="container">
     <h4 >Admin panel</h4>
-    <table class="w-100 p-3 table-bordered" >
-        <th>Number</th>
-        <th>Blog</th>
-        <th>Date</th>
-        <th>Accept</th>
-        <th>Reject</th>
+    <table class="w-100 p-3 table-bordered text-center" >
+        <tr>
+            <th class="py-2">Number</th>
+            <th class="py-2">Blog</th>
+            <th class="py-2">Date</th>
+            <th class="py-2">Accept</th>
+            <th class="py-2">Reject</th>
+        </tr>
+        
 
         <% blogs.forEach((blog)=>{ %>
-            <tr class="p-5">
+            <tr >
                 <td><%= blogs.indexOf(blog) + 1 %></td>
-                <td><%= blog.title %></td>
+                <td><a href="/blog/<%=blog._id%>"><%= blog.title %></a></td>
                 <td><%= blog.date %></td>
                 <td> <form action="/blog/confirmnew" method="post">
                     <input type="hidden" name="id" value="<%=blog._id%>">

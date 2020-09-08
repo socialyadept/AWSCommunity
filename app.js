@@ -75,11 +75,12 @@ app.post('/blog/new', (req, res) => {
 
     newBlog.date = dateTime;
 
-    Blogs.create(newBlog, function (err, blog) {
+    TempBlog.create(newBlog, function (err, blog) {
         if (err)
             console.log(err);
         else {
-            res.redirect("/blog/" + blog._id);
+            console.log(blog);
+            res.render("approval");
         }
     });
 });
