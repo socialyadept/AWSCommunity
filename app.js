@@ -87,14 +87,6 @@ app.post('/blog/new', (req, res) => {
 });
 
 app.post('/blog/confirmnew', isLoggedIn, (req, res) => {
-    // var today = new Date(),
-    //     date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate(),
-    //     time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(),
-    //     dateTime = date + ' ' + time,
-    //     newBlog = req.body;
-
-    // newBlog.date = dateTime;
-
 
     TempBlog.findById(req.body.id, function (err, temp) {
         if (err) {
@@ -102,6 +94,8 @@ app.post('/blog/confirmnew', isLoggedIn, (req, res) => {
 
 
         } else {
+            console.log('temp blog: \n')
+            console.log(temp);
 
             var title = temp.title,
                 author = temp.author,
@@ -115,6 +109,7 @@ app.post('/blog/confirmnew', isLoggedIn, (req, res) => {
                 if (err)
                     console.log(err);
                 else {
+                    console.log('rendered blog')
                     console.log(blog);
                     Blogs.find(function (err, allblogs) {
                         if (err) {
